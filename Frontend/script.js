@@ -11,7 +11,7 @@ async function fetchFoodData() {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/food?food=${foodItem}&userId=${userId}`);
+        const response = await fetch(`https://analyzer-upload.onrender.com/api/food?food=${foodItem}&userId=${userId}`);
 
         if (!response.ok) {  // Handle HTTP errors
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -51,7 +51,7 @@ async function loadDashboard() {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/user/profile-with-foods?userId=${userId}`, {
+        const response = await fetch(`https://analyzer-upload.onrender.com/api/user/profile-with-foods?userId=${userId}`, {
             headers: { "Authorization": `Bearer ${token}` },
         });
 
@@ -103,7 +103,7 @@ async function login() {
     const email = document.getElementById("emaill").value;
     const password = document.getElementById("passwordd").value;
 
-    const response = await fetch("http://localhost:5000/api/user/login", {
+    const response = await fetch("https://analyzer-upload.onrender.com/api/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -128,7 +128,7 @@ async function register() {
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("http://localhost:5000/api/user/register", {
+        const response = await fetch("https://analyzer-upload.onrender.com/api/user/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, password }),
