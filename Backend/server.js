@@ -9,7 +9,12 @@ connectDB();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://analyzer-upload-6.onrender.com",  
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
+app.options('*', cors());
 app.use("/api/user",userRoutes);
 app.use("/api/food", foodRoutes);
 
