@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://analyzer-upload-6.onrender.com",  
+  origin: "https://analyzer-upload-8.onrender.com",  
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
